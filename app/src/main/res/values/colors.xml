@@ -10,7 +10,7 @@
     <color name="BlueTheme_NavigationBar">#90CAF9</color>
 
     <!--  DarkTheme  -->
-    <color name="DarkTheme_colorPrimary">#232323</color>
+    <color name="DarkTheme_colorPrimary">#070707</color>
     <color name="DarkTheme_colorPrimaryDark">#070707</color>
     <color name="DarkTheme_colorAccent">#FFCC80</color>
     <color name="DarkTheme_Background">#141414</color>
@@ -21,6 +21,7 @@
     <color name="DarkTheme_NavigationBar">#0F0F0F</color>
 
     <!--  RedTheme  -->
+    <color name="RedTheme_colorPrimary">#F50000</color>
     <color name="RedTheme_colorPrimaryDark">#FF2020</color>
     <color name="RedTheme_colorAccent">#FCA727</color>
     <color name="RedTheme_Background">#FF3C3C</color>
