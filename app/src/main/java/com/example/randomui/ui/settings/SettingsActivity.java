@@ -18,21 +18,18 @@ import androidx.preference.PreferenceManager;
 
 import com.example.randomui.MainActivity;
 import com.example.randomui.R;
-import com.example.randomui.ui.MySettings;
-import com.example.randomui.ui.random.RandomFragment;
 
 public class SettingsActivity extends AppCompatActivity {
-    final String TAG = "MyLogs";
+    private final String TAG = "MyLogs";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.w(TAG, "SettingsActivity.onCreate");
-        Log.d(TAG, "onCreate: created");
 
         MySettings mySettings = new MySettings(this);
         mySettings.load();
-        Log.d(TAG, "onCreate: mySettings.load() succesfully");
         setContentView(R.layout.fragment_settings);
         getSupportFragmentManager()
                 .beginTransaction()
@@ -54,6 +51,7 @@ public class SettingsActivity extends AppCompatActivity {
                 Log.w(TAG, "onOptionsItemSelected: home button is pressed");
                 startActivity(new Intent(this, MainActivity.class));
                 finish();
+                overridePendingTransition(0, 0);
 
                 return super.onOptionsItemSelected(item);
             default:
@@ -101,26 +99,14 @@ public class SettingsActivity extends AppCompatActivity {
         @Override
         public boolean onPreferenceChange(Preference preference, Object newValue) {
             final String TAG = "MyLogs";
-            Log.d(TAG, "onPreferenceChange: preference = " + preference.getKey());
-            Log.d(TAG, "onPreferenceChange: newValue = " + newValue);
 
             language = sp.getString("Languages", "");
             theme = sp.getString("Themes", "");
-            Log.d(TAG, "onPreferenceChange: language = " + language);
-            Log.d(TAG, "onPreferenceChange: theme = " + theme);
 
-            switch (preference.getKey()) {
-                case "Themes":
+            getActivity().startActivity(new Intent(getContext(), SettingsActivity.class));
+            getActivity().finish();
+            getActivity().overridePendingTransition(0, 0);
 
-                    getActivity().recreate();
-                    break;
-                case "Languages":
-
-                    getActivity().recreate();
-                    break;
-                default:
-
-            }
 
             return true;
         }

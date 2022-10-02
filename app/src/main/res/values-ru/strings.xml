@@ -22,6 +22,8 @@
     <string name="settings_design">Внешний вид</string>
     <string name="version">Версия</string>
     <string name="share_thanks">Спасибо что поделились нашим приложением!</string>
+    <string name="share_text">Приветствую. Приложения RandomUI является вашим помощником с получением случайных чисел, вы можете скачать его по этой ссылке. Спасибо вам! :) </string>
+
     <string name="settings_another">Другое</string>
 
     <string name="settings_theme_summary">Синяя</string>

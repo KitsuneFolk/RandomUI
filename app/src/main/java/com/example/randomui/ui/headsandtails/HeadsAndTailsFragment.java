@@ -42,6 +42,7 @@ public class HeadsAndTailsFragment extends Fragment implements View.OnClickListe
                 short duration = 500;
                 Snackbar sb = Snackbar.make(v, result, duration);
                 sb.setAnimationMode(BaseTransientBottomBar.ANIMATION_MODE_SLIDE);
+                sb.setAnchorView(R.id.HeadsAndTails_btn);
                 sb.show();
 
 

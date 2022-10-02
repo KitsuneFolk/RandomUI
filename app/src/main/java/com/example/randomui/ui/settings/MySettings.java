@@ -1,4 +1,4 @@
-package com.example.randomui.ui;
+package com.example.randomui.ui.settings;
 
 import android.content.Context;
 import android.content.SharedPreferences;

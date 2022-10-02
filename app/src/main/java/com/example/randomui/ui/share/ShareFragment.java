@@ -28,7 +28,7 @@ public class ShareFragment extends Fragment {
         Log.w("MyLogs", "MainActivity.onNavigationItemSelected: nav_share is selected");
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
-        sendIntent.putExtra(Intent.EXTRA_TEXT, "Приложение " + Constant.APP_NAME + " является вашим помощником в получении случайных чисел. ");
+        sendIntent.putExtra(Intent.EXTRA_TEXT, getResources().getString(R.string.share_text));
         sendIntent.setType("text/plain");
         startActivity(Intent.createChooser(sendIntent, getString(R.string.menu_share)));
     }

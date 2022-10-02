@@ -19,7 +19,6 @@
     <string name="settings_language_default_value">en</string>
     <string name="settings_language_summary">English</string>
 
-
     <!--  Random views  -->
     <string name="Random_btn_Text">Random</string>
     <string name="tv1Text">0</string>
@@ -34,6 +33,7 @@
 
     <!--  Share views  -->
     <string name="share_thanks">Thanks for sharing the app!</string>
+    <string name="share_text">Hello. The app RandomUI is your helper with getting random numbers, you can download it from this link. Thank you :) </string>
     <string name="settings_another">Another</string>
 
 
