@@ -1,4 +1,4 @@
-package com.example.randomui.ui.random;
+package com.pandacorp.randomui.ui.random;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -11,9 +11,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProviders;
 
-import com.example.randomui.R;
+import com.pandacorp.randomui.R;
 
 import java.util.Random;
 
@@ -43,12 +42,9 @@ public class RandomFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(final View view) { //Метод для нажатия на кнопку btn1. Инициализация обьекта как final требуется для избежания ошибок. НЕ УДАЛЯТЬ БЕЗ УВЕРЕНОСТИ!
-
-        switch (view.getId()) {
-            case R.id.Random_btn:
-                Log.w("MyLogs", "RandomFragment.onClick: Random_btn is clicked");
-                getNum();
-                break;
+        if (view.getId() == R.id.Random_btn) {
+            Log.w("MyLogs", "RandomFragment.onClick: Random_btn is clicked");
+            getNum();
         }
     }
 

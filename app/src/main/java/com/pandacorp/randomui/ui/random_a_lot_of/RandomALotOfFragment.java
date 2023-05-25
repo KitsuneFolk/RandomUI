@@ -1,4 +1,4 @@
-package com.example.randomui.ui.random_a_lot_of;
+package com.pandacorp.randomui.ui.random_a_lot_of;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.example.randomui.R;
+import com.pandacorp.randomui.R;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -47,11 +47,9 @@ public class RandomALotOfFragment extends Fragment implements View.OnClickListen
 
     @Override
     public void onClick(final View view) { //Метод для нажатия на кнопку btn1. Инициализация обьекта как final требуется для избежания ошибок. НЕ УДАЛЯТЬ БЕЗ УВЕРЕНОСТИ!
-        switch (view.getId()) {
-            case R.id.RandomALotOf_btn:
-                getNums();
-                //Тут происходит обьявления нового интента, вкладывание в него ArrayList'а и переход на другое активити.
-                break;
+        if (view.getId() == R.id.RandomALotOf_btn) {
+            getNums();
+            //Тут происходит обьявления нового интента, вкладывание в него ArrayList'а и переход на другое активити.
         }
     }
 

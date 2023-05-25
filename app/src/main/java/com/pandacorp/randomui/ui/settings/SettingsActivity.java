@@ -1,4 +1,4 @@
-package com.example.randomui.ui.settings;
+package com.pandacorp.randomui.ui.settings;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,8 +16,8 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
 
-import com.example.randomui.MainActivity;
-import com.example.randomui.R;
+import com.pandacorp.randomui.MainActivity;
+import com.pandacorp.randomui.R;
 
 public class SettingsActivity extends AppCompatActivity {
     private final String TAG = "MyLogs";

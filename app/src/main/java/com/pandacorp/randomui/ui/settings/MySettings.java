@@ -1,4 +1,4 @@
-package com.example.randomui.ui.settings;
+package com.pandacorp.randomui.ui.settings;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -7,7 +7,7 @@ import android.util.Log;
 
 import androidx.preference.PreferenceManager;
 
-import com.example.randomui.R;
+import com.pandacorp.randomui.R;
 
 import java.util.Locale;
 

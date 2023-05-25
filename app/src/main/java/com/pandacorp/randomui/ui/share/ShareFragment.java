@@ -1,4 +1,4 @@
-package com.example.randomui.ui.share;
+package com.pandacorp.randomui.ui.share;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,8 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.randomui.R;
-import com.example.randomui.ui.Constant;
+import com.pandacorp.randomui.R;
 
 public class ShareFragment extends Fragment {
     private View root;

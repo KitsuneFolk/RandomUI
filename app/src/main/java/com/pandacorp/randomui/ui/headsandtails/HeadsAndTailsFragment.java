@@ -1,4 +1,4 @@
-package com.example.randomui.ui.headsandtails;
+package com.pandacorp.randomui.ui.headsandtails;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -10,7 +10,7 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.example.randomui.R;
+import com.pandacorp.randomui.R;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -35,17 +35,14 @@ public class HeadsAndTailsFragment extends Fragment implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.HeadsAndTails_btn:
-                Log.w("MyLogs", "HeadsAndTailsFragment.onClick: HeadsAndTails_btn is clicked");
-                getNum();
-                short duration = 500;
-                Snackbar sb = Snackbar.make(v, result, duration);
-                sb.setAnimationMode(BaseTransientBottomBar.ANIMATION_MODE_SLIDE);
-                sb.setAnchorView(R.id.HeadsAndTails_btn);
-                sb.show();
-
-
+        if (v.getId() == R.id.HeadsAndTails_btn) {
+            Log.w("MyLogs", "HeadsAndTailsFragment.onClick: HeadsAndTails_btn is clicked");
+            getNum();
+            short duration = 500;
+            Snackbar sb = Snackbar.make(v, result, duration);
+            sb.setAnimationMode(BaseTransientBottomBar.ANIMATION_MODE_SLIDE);
+            sb.setAnchorView(R.id.HeadsAndTails_btn);
+            sb.show();
         }
     }
 

@@ -1,4 +1,4 @@
-package com.example.randomui.ui.random_a_lot_of;
+package com.pandacorp.randomui.ui.random_a_lot_of;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.randomui.R;
+import com.pandacorp.randomui.R;
 
 import java.util.ArrayList;
 import java.util.List;

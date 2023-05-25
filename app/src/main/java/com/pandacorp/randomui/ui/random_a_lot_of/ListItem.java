@@ -1,4 +1,4 @@
-package com.example.randomui.ui.random_a_lot_of;
+package com.pandacorp.randomui.ui.random_a_lot_of;
 
 public class ListItem {
     private int num;

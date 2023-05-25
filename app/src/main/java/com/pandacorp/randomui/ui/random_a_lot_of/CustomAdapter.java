@@ -1,4 +1,4 @@
-package com.example.randomui.ui.random_a_lot_of;
+package com.pandacorp.randomui.ui.random_a_lot_of;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.randomui.R;
+import com.pandacorp.randomui.R;
 
 import java.util.List;
 
