@@ -5,31 +5,29 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_random"
+            android:id="@+id/nav_one"
             android:icon="@drawable/ic_menu_random"
-            android:title="@string/menu_random" />
+            android:title="@string/oneNumber" />
         <item
-            android:id="@+id/nav_headsandtails"
-            android:icon="@drawable/ic_menu_headsandtails"
-            android:title="@string/menu_headsandtails" />
-        <item
-            android:id="@+id/nav_randomALotOf"
+            android:id="@+id/nav_many"
             android:icon="@drawable/ic_menu_random_a_lot_of"
-            android:title="@string/menu_randomALotOf" />
-
+            android:title="@string/manyNumbers" />
+        <item
+            android:id="@+id/nav_coin"
+            android:icon="@drawable/ic_menu_headsandtails"
+            android:title="@string/coin" />
     </group>
 
-    <item android:title="Другое">
+    <item android:title="@string/another">
         <menu>
             <item
                 android:id="@+id/nav_settings"
                 android:icon="@drawable/ic_menu_settings"
-                android:title="@string/menu_settings" />
+                android:title="@string/settings" />
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
-                android:title="@string/menu_share" />
-
+                android:title="@string/share" />
         </menu>
     </item>
 

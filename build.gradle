@@ -1,5 +1,6 @@
 buildscript {
     ext.sdk = 33
+    ext.kotlinVersion = '1.8.10'
 
     repositories {
         google()
@@ -7,6 +8,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:8.0.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
     }
 }
 

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="@dimen/smallMargin"
+        android:layout_marginEnd="@dimen/smallMargin"
+        android:layout_marginTop="@dimen/smallMargin"
+        android:layout_marginBottom="@dimen/smallMargin"
+        app:layout_constraintBottom_toTopOf="@+id/randomButton"
+        app:layout_constraintEnd_toEndOf="@+id/randomButton"
+        app:layout_constraintStart_toStartOf="@+id/randomButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6">
+
+        <EditText
+            android:id="@+id/minEditText"
+            android:layout_width="@dimen/hugeBtnWidth"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:digits="-0123456789"
+            android:ems="12"
+            android:gravity="center"
+            android:hint="@string/minNum"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="10"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/maxEditText"
+            android:layout_width="@dimen/hugeBtnWidth"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:digits="-0123456789"
+            android:ems="12"
+            android:gravity="center"
+            android:hint="@string/maxNum"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="10"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/timesEditText"
+            android:layout_width="@dimen/hugeBtnWidth"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:digits="0123456789"
+            android:ems="12"
+            android:gravity="center"
+            android:hint="@string/numberOfTimes"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="5"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/randomButton"
+        android:layout_width="@dimen/hugeBtnWidth"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/mediumMargin"
+        android:layout_marginEnd="@dimen/mediumMargin"
+        app:layout_constraintVertical_bias="@dimen/buttonVerticalBias"
+        android:stateListAnimator="@animator/decrease_size_normal_animator"
+        android:text="@string/random"
+        android:textAllCaps="true"
+        android:textSize="@dimen/hugeBtnText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

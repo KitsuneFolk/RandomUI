@@ -1,35 +1,27 @@
 <resources>
-    <string name="app_name">RandomUI</string>
-    <string name="Random_btn_Text">Рандом</string>
-    <string name="tv1Text">0</string>
-    <string name="etMIN_hint">Первое число</string>
-    <string name="etMAX_hint">Второе число</string>
-    <string name="etTIMES_hint">Количество раз</string>
+    <string name="oneNumber">Одно число</string>
+    <string name="coin">Монета</string>
+    <string name="manyNumbers">Множество чисел</string>
+    <string name="settings">Настройки</string>
+    <string name="share">Поделиться</string>
 
-    <string name="Language_text">Язык</string>
-    <string name="Theme_text">Тема</string>
+    <string name="random">Рандом</string>
+    <string name="minNum">Минимальное число</string>
+    <string name="maxNum">Максимальное число</string>
+    <string name="numberOfTimes">Количество раз</string>
+    <string name="flip">Подбросить</string>
+    <string name="heads">Орёл</string>
+    <string name="tails">Решка</string>
 
-    <!-- Menu items Titles -->
-    <string name="menu_random">Рандом</string>
-    <string name="menu_headsandtails">Монета</string>
-    <string name="menu_randomALotOf">Множество</string>
-    <string name="menu_settings">Настройки</string>
-    <string name="menu_share">Поделиться</string>
-
-    <string name="HeadsAndTails_btn">Подбросить</string>
-
-    <!-- Preference Titles -->
-    <string name="settings_design">Внешний вид</string>
-    <string name="version">Версия</string>
-    <string name="share_thanks">Спасибо что поделились нашим приложением!</string>
-    <string name="share_text">Приветствую. Приложения RandomUI является вашим помощником с получением случайных чисел, вы можете скачать его по этой ссылке. Спасибо вам! :) </string>
-
-    <string name="settings_another">Другое</string>
-
-    <string name="settings_theme_summary">Синяя</string>
-    <string name="settings_theme_default_value">blue</string>
+    <string name="appearance">Внешний вид</string>
+    <string name="language">Язык</string>
+    <string name="theme">Тема</string>
+    <string name="another">Другое</string>
+    <string name="version">Версия %1%s</string>
     <string name="settings_language_default_value">ru</string>
-    <string name="settings_language_summary">Русский</string>
 
+    <string name="cancel">Отменить</string>
 
+    <string name="shareThanks">Спасибо что поделились нашим приложением!</string>
+    <string name="shareText">Приложение TaskUI это ваш помощник с вашими заданиями, вы можете скачать его по этой ссылке. Спасибо! :) </string>
 </resources>

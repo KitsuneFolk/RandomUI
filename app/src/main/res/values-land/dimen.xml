@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="navigationViewTopPadding">10dp</dimen>
+    <dimen name="hugeBtnText">30sp</dimen>
+
+    <dimen name="bigMargin">6dp</dimen>
+
+    <dimen name="coin">125dp</dimen>
+</resources>
