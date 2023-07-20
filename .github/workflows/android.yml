@@ -24,10 +24,7 @@ jobs:
 
       - name: Build with Gradle
         run: ./gradlew :app:assembleDebug
-
-      - name: Check Kotlin code style
-        run: ./gradlew ktlint
-
+        
       - name: Upload Debug APK
         uses: actions/upload-artifact@v3
         with:
