@@ -1,6 +1,5 @@
 package com.pandacorp.randomui.presentation.ui.activity
 
-import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
@@ -18,25 +17,47 @@ import com.fragula2.animation.SwipeController
 import com.fragula2.utils.findSwipeController
 import com.pandacorp.randomui.R
 import com.pandacorp.randomui.databinding.ActivityMainBinding
-import com.pandacorp.randomui.presentation.di.app.App
 import com.pandacorp.randomui.presentation.ui.screen.MainScreen
-import com.pandacorp.randomui.presentation.utils.PreferenceHandler
-import com.pandacorp.randomui.presentation.utils.Utils
+import com.pandacorp.randomui.presentation.utils.helpers.PreferenceHandler
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
-    private val app by lazy { application as App }
-
     private lateinit var fragulaNavController: NavController
     private lateinit var swipeController: SwipeController
+    private var mainScreen: MainScreen? = null
 
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding!!
 
-    private var mainScreen: MainScreen? = null
 
     fun getFragulaNavController(): NavController = fragulaNavController
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        installSplashScreen() // Show Splash Screen
+        PreferenceHandler.setLanguage(this)
+        super.onCreate(savedInstanceState)
+        // Throw any uncaught exceptions
+        Thread.setDefaultUncaughtExceptionHandler { _, throwable ->
+            throw (throwable)
+        }
+        PreferenceHandler.setTheme(this)
+        _binding = ActivityMainBinding.inflate(layoutInflater)
+        setSupportActionBar(binding.toolbar)
+        setContentView(binding.root)
+
+        initViews()
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return fragulaNavController.navigateUp() || super.onSupportNavigateUp()
+    }
+
+    override fun onDestroy() {
+        _binding = null
+        mainScreen = null
+        super.onDestroy()
+    }
 
     private fun initViews() {
         binding.fragulaNavHostFragment.getFragment<NavHostFragment>().apply {
@@ -49,7 +70,7 @@ class MainActivity : AppCompatActivity() {
                         fm: FragmentManager,
                         f: Fragment,
                         v: View,
-                        savedInstanceState: Bundle?
+                        savedInstanceState: Bundle?,
                     ) {
                         super.onFragmentViewCreated(fm, f, v, savedInstanceState)
                         if (f is MainScreen) mainScreen = f
@@ -60,10 +81,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.navView.apply {
-            setCheckedItem(app.selectedNavigationItemId)
+            if (checkedItem == null) setCheckedItem(R.id.nav_one)
             setNavigationItemSelectedListener {
-                // Uncheck selectedNavigationItemId in App and set the previous one
-                app.selectedNavigationItemId = it.itemId
                 lifecycleScope.launch {
                     delay(200) // add delay
                     binding.drawerLayout.closeDrawer(GravityCompat.START)
@@ -73,25 +92,8 @@ class MainActivity : AppCompatActivity() {
                         R.id.nav_many -> mainScreen!!.navigateFragment(it.itemId)
                         R.id.nav_coin -> mainScreen!!.navigateFragment(it.itemId)
 
-                        R.id.nav_settings -> {
+                        R.id.nav_settings ->
                             fragulaNavController.navigate(R.id.nav_settings_screen)
-                            // Set the previous selected item
-                            app.selectedNavigationItemId =
-                                binding.navView.checkedItem?.itemId ?: R.id.nav_one
-
-                        }
-
-                        R.id.nav_share -> {
-                            val sendIntent = Intent().apply {
-                                action = Intent.ACTION_SEND
-                                putExtra(Intent.EXTRA_TEXT, resources.getString(R.string.shareText))
-                                type = "text/plain"
-                            }
-                            startActivity(Intent.createChooser(sendIntent, getString(R.string.share)))
-                            // Set the previous selected item
-                            app.selectedNavigationItemId =
-                                binding.navView.checkedItem?.itemId ?: R.id.nav_one
-                        }
                     }
                 }
                 true
@@ -124,27 +126,5 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        installSplashScreen() // Handle the splash screen transition.
-        super.onCreate(savedInstanceState)
-        Utils.setupExceptionHandler()
-        PreferenceHandler.load(this)
-        _binding = ActivityMainBinding.inflate(layoutInflater)
-        setSupportActionBar(binding.toolbar)
-        setContentView(binding.root)
-
-        initViews()
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        return fragulaNavController.navigateUp() || super.onSupportNavigateUp()
-    }
-
-    override fun onDestroy() {
-        _binding = null
-        mainScreen = null
-        super.onDestroy()
     }
 }

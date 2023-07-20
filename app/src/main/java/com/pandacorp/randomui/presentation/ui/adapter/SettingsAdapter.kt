@@ -10,11 +10,11 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.pandacorp.randomui.R
-import com.pandacorp.randomui.presentation.utils.Constants
+import com.pandacorp.randomui.presentation.utils.helpers.Constants
 
-class ListAdapter(
-    context: Context, languagesList: MutableList<ListItem>, private val preferenceKey: String
-) : ArrayAdapter<ListItem>(context, 0, languagesList) {
+class SettingsAdapter(
+    context: Context, languagesList: MutableList<SettingsDialogItem>, private val preferenceKey: String
+) : ArrayAdapter<SettingsDialogItem>(context, 0, languagesList) {
     private var onListItemClickListener: OnListItemClickListener? = null
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
@@ -45,7 +45,7 @@ class ListAdapter(
     }
 
     fun interface OnListItemClickListener {
-        fun onClick(listItem: ListItem)
+        fun onClick(settingsDialogItem: SettingsDialogItem)
     }
 }
     

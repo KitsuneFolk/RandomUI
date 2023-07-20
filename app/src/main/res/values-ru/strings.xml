@@ -3,7 +3,6 @@
     <string name="coin">Монета</string>
     <string name="manyNumbers">Множество чисел</string>
     <string name="settings">Настройки</string>
-    <string name="share">Поделиться</string>
 
     <string name="random">Рандом</string>
     <string name="minNum">Минимальное число</string>
@@ -17,11 +16,8 @@
     <string name="language">Язык</string>
     <string name="theme">Тема</string>
     <string name="another">Другое</string>
-    <string name="version">Версия %1%s</string>
+    <string name="version">Версия %1$s</string>
     <string name="settings_language_default_value">ru</string>
 
     <string name="cancel">Отменить</string>
-
-    <string name="shareThanks">Спасибо что поделились нашим приложением!</string>
-    <string name="shareText">Приложение TaskUI это ваш помощник с вашими заданиями, вы можете скачать его по этой ссылке. Спасибо! :) </string>
 </resources>

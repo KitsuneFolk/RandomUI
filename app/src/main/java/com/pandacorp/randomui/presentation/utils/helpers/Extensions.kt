@@ -1,4 +1,4 @@
-package com.pandacorp.randomui.presentation.utils
+package com.pandacorp.randomui.presentation.utils.helpers
 
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
@@ -6,11 +6,9 @@ import android.os.Build
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.pandacorp.randomui.presentation.di.app.App
 
 val Fragment.supportActionBar: ActionBar?
     get() = (activity as? AppCompatActivity)?.supportActionBar
-val Fragment.app get() = (requireActivity().application as App)
 
 /**
  * A compatibility wrapper around PackageManager's `getPackageInfo()` method that allows

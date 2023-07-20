@@ -1,4 +1,4 @@
-package com.pandacorp.randomui.presentation.utils
+package com.pandacorp.randomui.presentation.utils.helpers
 
 sealed class Constants {
     object PreferenceKeys {

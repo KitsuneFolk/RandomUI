@@ -3,7 +3,6 @@
     <string name="manyNumbers">Множина чисел</string>
     <string name="coin">Монета</string>
     <string name="settings">Налаштування</string>
-    <string name="share">Подiлитися</string>
 
     <string name="random">Рандом</string>
     <string name="minNum">Мiнiмальне число</string>
@@ -21,7 +20,4 @@
     <string name="another">Iнше</string>
     <string name="version">Версія %1$s</string>
     <string name="settings_language_default_value">uk</string>
-
-    <string name="shareThanks">Дякую що поширили наш додаток!</string>
-    <string name="shareText">Додаток RandomUI це ваш помiчник iз отриманням випадкових чисел, ви можете завантажити його за цим посиланням. Дякую! :) </string>
 </resources>

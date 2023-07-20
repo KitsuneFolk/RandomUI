@@ -5,7 +5,6 @@
     <string name="manyNumbers">Many numbers</string>
     <string name="coin">Coin</string>
     <string name="settings">Settings</string>
-    <string name="share">Share</string>
 
     <string name="random">Random</string>
     <string name="minNum">Min number</string>
@@ -24,7 +23,4 @@
 
     <string name="ok" translatable="false">OK</string>
     <string name="cancel">Cancel</string>
-
-    <string name="shareThanks">Thanks for sharing the app!</string>
-    <string name="shareText">The app RandomUI is your helper with getting random numbers, you can download it from this link. Thank you :) </string>
 </resources>

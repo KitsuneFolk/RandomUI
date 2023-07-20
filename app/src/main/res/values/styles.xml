@@ -28,18 +28,22 @@
     <style name="SnackBarStyle" parent="Widget.Material3.Snackbar">
         <item name="backgroundTint">?android:attr/colorPrimary</item>
     </style>
+
     <style name="SnackBarButtonStyle" parent="Widget.Material3.Button.TextButton.Snackbar">
         <item name="backgroundTint">@android:color/transparent</item>
         <item name="android:textColor">?android:textColor</item>
         <item name="strokeColor">?android:textColor</item>
         <item name="strokeWidth">1dp</item>
     </style>
+
     <style name="SnackBarTextStyle" parent="@style/Widget.Material3.Snackbar.TextView">
         <item name="android:textColor">?android:textColor</item>
     </style>
+
     <style name="DialogButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
         <item name="android:textColor">?android:attr/textColor</item>
     </style>
+
     <style name="NavigationViewStyle" parent="Widget.Material3.NavigationView">
         <item name="android:backgroundTint">?android:colorBackground</item>
         <item name="itemIconTint">@color/item_color_state</item>

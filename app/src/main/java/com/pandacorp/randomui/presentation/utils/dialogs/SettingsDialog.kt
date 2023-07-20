@@ -4,22 +4,22 @@ import android.app.Activity
 import android.os.Bundle
 import com.pandacorp.randomui.R
 import com.pandacorp.randomui.databinding.DialogListViewBinding
-import com.pandacorp.randomui.presentation.ui.adapter.ListAdapter
-import com.pandacorp.randomui.presentation.ui.adapter.ListItem
-import com.pandacorp.randomui.presentation.utils.Constants
+import com.pandacorp.randomui.presentation.ui.adapter.SettingsAdapter
+import com.pandacorp.randomui.presentation.ui.adapter.SettingsDialogItem
+import com.pandacorp.randomui.presentation.utils.helpers.Constants
 
-class DialogListView(private val activity: Activity, private val preferenceKey: String) : CustomDialog(activity) {
+class SettingsDialog(private val activity: Activity, private val preferenceKey: String) : CustomDialog(activity) {
     private lateinit var binding: DialogListViewBinding
 
-    private fun fillThemesList(): MutableList<ListItem> {
+    private fun fillThemesList(): MutableList<SettingsDialogItem> {
         val keysList = activity.resources.getStringArray(R.array.Themes_values)
         val titlesList = activity.resources.getStringArray(R.array.Themes)
         val itemsList =
             activity.resources.obtainTypedArray(R.array.Themes_drawables)
-        val themesList: MutableList<ListItem> = mutableListOf()
+        val themesList: MutableList<SettingsDialogItem> = mutableListOf()
         repeat(keysList.size) { i ->
             themesList.add(
-                ListItem(
+                SettingsDialogItem(
                     keysList[i],
                     titlesList[i],
                     itemsList.getDrawable(i)!!
@@ -30,15 +30,15 @@ class DialogListView(private val activity: Activity, private val preferenceKey: 
         return themesList
     }
 
-    private fun fillLanguagesList(): MutableList<ListItem> {
+    private fun fillLanguagesList(): MutableList<SettingsDialogItem> {
         val keysList = activity.resources.getStringArray(R.array.Languages_values)
         val drawablesList =
             activity.resources.obtainTypedArray(R.array.Languages_drawables)
         val titlesList = activity.resources.getStringArray(R.array.Languages)
-        val itemsList: MutableList<ListItem> = mutableListOf()
+        val itemsList: MutableList<SettingsDialogItem> = mutableListOf()
         repeat(keysList.size) { i ->
             itemsList.add(
-                ListItem(
+                SettingsDialogItem(
                     keysList[i],
                     titlesList[i],
                     drawablesList.getDrawable(i)!!
@@ -68,19 +68,16 @@ class DialogListView(private val activity: Activity, private val preferenceKey: 
             cancel()
         }
 
-        val itemsList: MutableList<ListItem> = when (preferenceKey) {
+        val itemsList: MutableList<SettingsDialogItem> = when (preferenceKey) {
             Constants.PreferenceKeys.themesKey -> fillThemesList()
             Constants.PreferenceKeys.languagesKey -> fillLanguagesList()
             else -> throw IllegalArgumentException()
 
         }
-        val adapter = ListAdapter(activity, itemsList, preferenceKey)
+        val adapter = SettingsAdapter(activity, itemsList, preferenceKey)
         adapter.setOnClickListener { listItem ->
             sp.edit().putString(preferenceKey, listItem.value).apply()
             cancel()
-//            requireActivity().setResult(AppCompatActivity.RESULT_OK)
-//            requireActivity().startActivity(Intent(context, SettingsActivity::class.java))
-//            requireActivity().finish() todo:
             activity.apply {
                 recreate()
                 overridePendingTransition(0, 0)

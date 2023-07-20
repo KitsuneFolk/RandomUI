@@ -1,4 +1,4 @@
-package com.pandacorp.randomui.presentation.ui.viewModels
+package com.pandacorp.randomui.presentation.viewModels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -7,8 +7,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-class RandomOneViewModel(private val getRandomNumberUseCase: GetRandomNumberUseCase) :
-    ViewModel() {
+class RandomOneViewModel(private val getRandomNumberUseCase: GetRandomNumberUseCase) : ViewModel() {
     private val _number = MutableStateFlow(0)
     val number: StateFlow<Int> = _number
 

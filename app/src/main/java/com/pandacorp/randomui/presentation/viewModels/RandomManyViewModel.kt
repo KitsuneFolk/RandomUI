@@ -1,4 +1,4 @@
-package com.pandacorp.randomui.presentation.ui.viewModels
+package com.pandacorp.randomui.presentation.viewModels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -8,8 +8,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-class RandomManyViewModel(private val getRandomListUseCase: GetRandomListUseCase) :
-    ViewModel() {
+class RandomManyViewModel(private val getRandomListUseCase: GetRandomListUseCase) : ViewModel() {
     private val _numbersList = MutableStateFlow<MutableList<NumberItem>>(mutableListOf())
     val numbersList: StateFlow<MutableList<NumberItem>> = _numbersList
 
@@ -18,6 +17,7 @@ class RandomManyViewModel(private val getRandomListUseCase: GetRandomListUseCase
             _numbersList.emit(newList)
         }
     }
+
     fun getRandomList(range: IntRange, times: Int): MutableList<NumberItem> {
         val list = getRandomListUseCase(range, times)
         updateList(list)
