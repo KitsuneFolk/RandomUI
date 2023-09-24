@@ -30,7 +30,6 @@ class MainActivity : AppCompatActivity() {
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding!!
 
-
     fun getFragulaNavController(): NavController = fragulaNavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,8 +74,8 @@ class MainActivity : AppCompatActivity() {
                         super.onFragmentViewCreated(fm, f, v, savedInstanceState)
                         if (f is MainScreen) mainScreen = f
                     }
-
-                }, false
+                },
+                false,
             )
         }
 

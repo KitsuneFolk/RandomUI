@@ -38,9 +38,13 @@ class SettingsScreen : Fragment(R.layout.screen_settings) {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         val dialogKey =
-            if (themeDialog.isShowing) Constants.PreferenceKeys.themesKey
-            else if (languageDialog.isShowing) Constants.PreferenceKeys.languagesKey
-            else null
+            if (themeDialog.isShowing) {
+                Constants.PreferenceKeys.themesKey
+            } else if (languageDialog.isShowing) {
+                Constants.PreferenceKeys.languagesKey
+            } else {
+                null
+            }
 
         outState.apply {
             putString(Constants.PreferenceKeys.preferenceBundleKey, dialogKey)
@@ -82,14 +86,14 @@ class SettingsScreen : Fragment(R.layout.screen_settings) {
         binding.themeTextView.apply {
             val themeKey = sp.getString(
                 Constants.PreferenceKeys.themesKey,
-                requireContext().resources.getString(R.string.settings_theme_default_value)
+                requireContext().resources.getString(R.string.settings_theme_default_value),
             )!!
             text = getThemeFromKey(themeKey)
         }
         binding.languageTextView.apply {
             val languageKey = sp.getString(
                 Constants.PreferenceKeys.languagesKey,
-                requireContext().resources.getString(R.string.settings_language_default_value)
+                requireContext().resources.getString(R.string.settings_language_default_value),
             )!!
             text = getLanguageFromKey(languageKey)
         }

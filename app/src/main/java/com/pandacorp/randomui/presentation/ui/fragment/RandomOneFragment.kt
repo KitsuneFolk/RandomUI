@@ -30,15 +30,14 @@ class RandomOneFragment : Fragment(R.layout.fragment_random_one) {
         }
         binding.randomButton.setOnClickListener {
             try {
-                val _min = binding.minEditText.text.toString().toInt()
-                val _max = binding.maxEditText.text.toString().toInt()
+                val min = binding.minEditText.text.toString().toInt()
+                val max = binding.maxEditText.text.toString().toInt()
 
                 // Reassign variables if max is less than min
-                val min = _min.coerceAtMost(_max)
-                val max = _max.coerceAtLeast(_min)
+                val coercedMin = min.coerceAtMost(max)
+                val coercedMax = max.coerceAtLeast(min)
 
-                vm.getRandomNumber(min..max)
-
+                vm.getRandomNumber(coercedMin..coercedMax)
             } catch (e: NumberFormatException) {
                 // Empty editTexts
             }

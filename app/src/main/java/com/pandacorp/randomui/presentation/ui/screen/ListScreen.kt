@@ -43,7 +43,7 @@ class ListScreen : Fragment(R.layout.screen_list) {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(requireContext())
             addItemDecoration(
-                DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL)
+                DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL),
             )
             adapter = recyclerAdapter
         }

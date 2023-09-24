@@ -25,8 +25,11 @@ object PreferenceHandler {
     ) {
         when (theme) {
             themeFollowSystem -> {
-                if (isDeviceDarkMode(context)) context.setTheme(R.style.DarkTheme)
-                else context.setTheme(R.style.BlueTheme)
+                if (isDeviceDarkMode(context)) {
+                    context.setTheme(R.style.DarkTheme)
+                } else {
+                    context.setTheme(R.style.BlueTheme)
+                }
             }
 
             themeBlue -> context.setTheme(R.style.BlueTheme)
@@ -40,7 +43,7 @@ object PreferenceHandler {
         context: Context,
         language: String = PreferenceManager.getDefaultSharedPreferences(context).getString(
             Constants.PreferenceKeys.languagesKey,
-            context.resources.getString(R.string.settings_language_default_value)
+            context.resources.getString(R.string.settings_language_default_value),
         )!!,
     ) {
         AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags(language))

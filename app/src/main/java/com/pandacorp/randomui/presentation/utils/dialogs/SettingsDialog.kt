@@ -22,8 +22,8 @@ class SettingsDialog(private val activity: Activity, private val preferenceKey: 
                 SettingsDialogItem(
                     keysList[i],
                     titlesList[i],
-                    itemsList.getDrawable(i)!!
-                )
+                    itemsList.getDrawable(i)!!,
+                ),
             )
         }
         itemsList.recycle()
@@ -41,8 +41,8 @@ class SettingsDialog(private val activity: Activity, private val preferenceKey: 
                 SettingsDialogItem(
                     keysList[i],
                     titlesList[i],
-                    drawablesList.getDrawable(i)!!
-                )
+                    drawablesList.getDrawable(i)!!,
+                ),
             )
         }
         drawablesList.recycle()
@@ -61,7 +61,7 @@ class SettingsDialog(private val activity: Activity, private val preferenceKey: 
                 Constants.PreferenceKeys.themesKey -> R.string.theme
                 Constants.PreferenceKeys.languagesKey -> R.string.language
                 else -> throw IllegalArgumentException("PreferenceKey = $preferenceKey")
-            }
+            },
         )
 
         binding.dialogListViewCancel.setOnClickListener {
@@ -72,7 +72,6 @@ class SettingsDialog(private val activity: Activity, private val preferenceKey: 
             Constants.PreferenceKeys.themesKey -> fillThemesList()
             Constants.PreferenceKeys.languagesKey -> fillLanguagesList()
             else -> throw IllegalArgumentException()
-
         }
         val adapter = SettingsAdapter(activity, itemsList, preferenceKey)
         adapter.setOnClickListener { listItem ->

@@ -13,7 +13,9 @@ import com.pandacorp.randomui.R
 import com.pandacorp.randomui.presentation.utils.helpers.Constants
 
 class SettingsAdapter(
-    context: Context, languagesList: MutableList<SettingsDialogItem>, private val preferenceKey: String
+    context: Context,
+    languagesList: MutableList<SettingsDialogItem>,
+    private val preferenceKey: String
 ) : ArrayAdapter<SettingsDialogItem>(context, 0, languagesList) {
     private var onListItemClickListener: OnListItemClickListener? = null
 
@@ -48,4 +50,3 @@ class SettingsAdapter(
         fun onClick(settingsDialogItem: SettingsDialogItem)
     }
 }
-    
