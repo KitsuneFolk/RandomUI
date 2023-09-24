@@ -6,13 +6,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion sdk
-    buildToolsVersion '33.0.2'
     namespace 'com.pandacorp.randomui'
     defaultConfig {
         applicationId "com.pandacorp.randomui"
         minSdkVersion 21
-        targetSdkVersion sdk
+        compileSdk 34
+        targetSdkVersion 34
+        buildToolsVersion = '33.0.2'
         versionCode 1
         versionName "1.0.0"
         vectorDrawables.useSupportLibrary = true
@@ -22,7 +22,7 @@ android {
         release {
             minifyEnabled true
             shrinkResources true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
         }
     }
 
@@ -45,10 +45,10 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.6.0'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.6.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.7.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.7.2'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation 'androidx.preference:preference-ktx:1.2.0'
+    implementation 'androidx.preference:preference-ktx:1.2.1'
     implementation 'com.google.android.material:material:1.9.0'
 
     // Custom
@@ -56,6 +56,6 @@ dependencies {
     implementation 'androidx.core:core-splashscreen:1.0.1'
 
     // Koin
-    implementation "io.insert-koin:koin-core:3.2.2"
-    implementation "io.insert-koin:koin-android:3.2.2"
+    implementation "io.insert-koin:koin-core:3.5.0"
+    implementation "io.insert-koin:koin-android:3.5.0"
 }
