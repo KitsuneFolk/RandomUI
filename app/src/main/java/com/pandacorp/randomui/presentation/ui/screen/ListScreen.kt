@@ -13,11 +13,11 @@ import com.pandacorp.randomui.presentation.utils.helpers.supportActionBar
 import com.pandacorp.randomui.presentation.utils.helpers.viewBinding
 import com.pandacorp.randomui.presentation.viewModels.RandomManyViewModel
 import kotlinx.coroutines.launch
-import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 class ListScreen : Fragment(R.layout.screen_list) {
     private val binding by viewBinding(ScreenListBinding::bind)
-    private val vm: RandomManyViewModel by sharedViewModel()
+    private val vm: RandomManyViewModel by activityViewModel()
 
     private val recyclerAdapter = NumbersAdapter()
 

@@ -80,7 +80,6 @@ class SettingsDialog(private val activity: Activity, private val preferenceKey: 
             cancel()
             activity.apply {
                 recreate()
-                overridePendingTransition(0, 0)
             }
         }
         binding.dialogListViewListView.adapter = adapter
