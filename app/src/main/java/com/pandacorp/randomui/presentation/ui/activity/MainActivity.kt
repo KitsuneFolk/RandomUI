@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.graphics.drawable.DrawerArrowDrawable
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
@@ -19,6 +18,7 @@ import com.pandacorp.randomui.R
 import com.pandacorp.randomui.databinding.ActivityMainBinding
 import com.pandacorp.randomui.presentation.ui.screen.MainScreen
 import com.pandacorp.randomui.presentation.utils.helpers.PreferenceHandler
+import com.pandacorp.splashscreen.SplashScreen.Companion.installSplashScreen
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

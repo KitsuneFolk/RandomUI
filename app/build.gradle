@@ -53,7 +53,7 @@ dependencies {
 
     // Custom
     implementation 'com.fragula2:fragula-core:2.9'
-    implementation 'androidx.core:core-splashscreen:1.0.1'
+    implementation 'com.github.MrRuslanYT:SplashScreen:1.0.0'
 
     // Koin
     implementation "io.insert-koin:koin-core:3.5.0"
