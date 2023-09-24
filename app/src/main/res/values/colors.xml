@@ -29,4 +29,6 @@
     <color name="PurpleTheme_colorSecondary">#D3D3D3</color>
     <color name="PurpleTheme_textColorSecondary">#EFB3FF</color>
 
+    <!--  Another  -->
+    <color name="ic_launcher_background">#3F48CC</color>
 </resources>
